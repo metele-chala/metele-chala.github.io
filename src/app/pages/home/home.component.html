@@ -26,17 +26,17 @@
       </section>
 
       <section class="info-boxes">
-        <a href="info?item=2" class="pixel-button-info-box">
+        <a [routerLink]="['/info']" [queryParams]="{ item: 2 }" class="pixel-button-info-box">
           <div class="info-box">
             <h3>¿Dónde puedo encontrar el libro para la conducción en Chile para la licencia clase B?</h3>
           </div>
         </a>
-        <a href="info?item=3" class="pixel-button-info-box">
+        <a [routerLink]="['/info']" [queryParams]="{ item: 3 }" class="pixel-button-info-box">
           <div class="info-box">
             <h3>Pasos para obtener la licencia de conducir clase B</h3>
           </div>
         </a>
-        <a href="info?item=1" class="pixel-button-info-box">
+        <a [routerLink]="['/info']" [queryParams]="{ item: 1 }" class="pixel-button-info-box">
           <div class="info-box">
             <h3>Acerca de "MeteleChala.cl"</h3>
           </div>
