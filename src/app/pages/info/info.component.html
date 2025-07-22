@@ -1,0 +1,151 @@
+
+  <div class="page-container">
+
+    <main>
+      <section class="info-text">
+        <p>En esta sección encontrarás información sobre nuestro sitio web, el libro del conductor, costos, requisitos y más.</p>
+      </section>
+    
+      <div class="accordion">
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(1)" class="accordion-label" [class.active]="isOpen(1)">Acerca de "MeteleChala.cl"</button>
+          <div class="accordion-content" *ngIf="isOpen(1)">
+            <p>
+              Somos una plataforma que recopila preguntas para ayudar a la comunidad a prepararse para el examen teórico de conducir para la licencia clase B. Actualmente, contamos con más de 500 preguntas en nuestra base de datos. Los usuarios pueden realizar tests ilimitados de forma gratuita. Mantenemos el sitio mediante la publicidad de anuncios.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(2)" class="accordion-label" [class.active]="isOpen(2)">¿Dónde puedo encontrar el libro para la conducción en Chile para la licencia clase B?</button>
+          <div class="accordion-content" *ngIf="isOpen(2)">
+            <p>Puedes acceder al documento oficial emitido por CONASET en el siguiente <a href="https://www.conaset.cl/wp-content/uploads/2024/10/Libro-para-la-conduccion-en-Chile_Clase-B_oct-2024.pdf" target="_blank">enlace</a></p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(3)" class="accordion-label" [class.active]="isOpen(3)">Pasos para obtener la licencia de conducir clase B</button>
+          <div class="accordion-content" *ngIf="isOpen(3)">
+            <p>
+              1. Leer el libro oficial para la conducción en Chile para la licencia clase B.<br>
+              2. Practicar en nuestra página web mediante diversos tests de conducción.<br>
+              3. Luego, solicita una cita para realizar los exámenes en la oficina de tránsito de tu municipalidad. Se te solicitarán ciertos documentos y tendrás que abonar el costo del examen de conducir, que oscila entre los $20,000 y los $40,000 pesos chilenos.<br>
+              4. En la fecha y hora programadas para tu examen teórico, preséntate y apruébalo. Si no lo apruebas, tendrás que presentarte nuevamente en un plazo no superior a 25 días.<br>
+              5. Una vez aprobado el examen teórico, deberás realizar los exámenes psicométricos.<br>
+              6. El último examen es el práctico, que tendrá una duración aproximada de 25 minutos y cubrirá una distancia de 5 kilómetros. La conducción será libre y guiada, y solo un error grave podría resultar en la reprobación del examen.<br>
+              7. Finalmente, deberás acercarte a la municipalidad para retirar tu licencia de conducir clase B.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(4)" class="accordion-label" [class.active]="isOpen(4)">¿Qué debo presentar en la municipalidad para obtener la licencia de conducir clase B por primera vez?</button>
+          <div class="accordion-content" *ngIf="isOpen(4)">
+            <p>
+              - Carnet de identidad<br>
+              - Certificado de residencia<br>
+              - Fotocopia legalizada ante notario del certificado de estudios de 8° básico o superior<br>
+              - Vehículo para el examen práctico, con toda la documentación al día<br><br>
+              Todo postulante que rinda el examen práctico debe realizar una conducción libre desde la Dirección de Tránsito hasta el punto de destino que elija, según el plano. Al regresar, será guiado de vuelta a la Dirección de Tránsito.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(5)" class="accordion-label" [class.active]="isOpen(5)">¿Qué exámenes debo rendir en la municipalidad para obtener la licencia de conducir por primera vez?</button>
+          <div class="accordion-content" *ngIf="isOpen(5)">
+            <p>
+              - Examen físico (sensométrico)<br>
+              - Examen psíquico (sicométrico)<br>
+              - Entrevista médica<br>
+              - Examen teórico<br>
+              - Examen práctico<br>
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(6)" class="accordion-label" [class.active]="isOpen(6)">¿Cuántas preguntas tendrá mi examen teórico y cuál es el puntaje mínimo para aprobar?</button>
+          <div class="accordion-content" *ngIf="isOpen(6)">
+            <p>
+              El examen oficial para la licencia no profesional clase B constará de 35 preguntas de temática variada, tres de ellas con puntuación doble. El puntaje máximo será de 38 puntos (35+3), y el examen solo se aprueba con un puntaje mínimo de 33 puntos. El tiempo máximo para realizar el examen teórico será de 45 minutos.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(7)" class="accordion-label" [class.active]="isOpen(7)">¿Cuál será el contenido del test oficial en la municipalidad?</button>
+          <div class="accordion-content" *ngIf="isOpen(7)">
+            <p>
+              Las preguntas del examen se basarán en los contenidos del Libro del Nuevo Conductor, que debes obtener en su versión más actualizada. Este libro recopila todas las normas y reglamentaciones necesarias para aprobar el examen de cada tipo de licencia de conducir en Chile.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(8)" class="accordion-label" [class.active]="isOpen(8)">¿Hay algún lugar donde pueda encontrar todas las preguntas que pueden aparecer en mi test?</button>
+          <div class="accordion-content" *ngIf="isOpen(8)">
+            <p>
+              No, el banco de preguntas oficial de CONASET no es público para los aspirantes, y no existe un libro que reúna todas las preguntas posibles. Esto se debe a que el objetivo es que los aspirantes comprendan y aprendan las normas, no solo memoricen las preguntas.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(9)" class="accordion-label" [class.active]="isOpen(9)">¿Cuánto tiempo debo esperar para rendir nuevamente mi examen teórico si lo he reprobado?</button>
+          <div class="accordion-content" *ngIf="isOpen(9)">
+            <p>
+              Si repruebas el examen teórico, podrás rendirlo nuevamente después de 25 días sin costo adicional. Si esta segunda vez no lo apruebas, se te negará la licencia y podrás volver a solicitarla en un mes. La municipalidad te indicará la nueva fecha para rendir el examen.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(10)" class="accordion-label" [class.active]="isOpen(10)">¿Cómo será el examen práctico para la licencia clase B?</button>
+          <div class="accordion-content" *ngIf="isOpen(10)">
+            <p>
+              El examen práctico tendrá una duración de aproximadamente 25 minutos, durante los cuales el aspirante deberá recorrer al menos 5 kilómetros. El objetivo es que los examinadores puedan evaluar cómo el postulante maneja el tránsito real y su capacidad de conducción. En la primera parte, el examen será guiado, y en la segunda, el aspirante conducirá libremente hacia un destino previamente establecido, sin recibir instrucciones durante el recorrido.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(11)" class="accordion-label" [class.active]="isOpen(11)">¿Cómo se desarrollan las pruebas de conducción guiada y libre?</button>
+          <div class="accordion-content" *ngIf="isOpen(11)">
+            <p>
+              Conducción guiada: Durará 15 minutos, durante los cuales el aspirante deberá seguir las indicaciones del examinador.<br><br>
+              Conducción libre (10 min): El postulante deberá conducir sin instrucciones del examinador, siguiendo un destino previamente indicado. Por ejemplo, el examinador le pedirá que se dirija a un lugar específico sin dar más detalles sobre el camino a seguir.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(12)" class="accordion-label" [class.active]="isOpen(12)">¿Quién establece el punto de origen y destino en la fase de conducción libre?</button>
+          <div class="accordion-content" *ngIf="isOpen(12)">
+            <p>
+              Los puntos de inicio y fin del recorrido en la fase de conducción libre son de conocimiento público y serán establecidos por la municipalidad. El día del examen, el instructor te indicará el recorrido específico que deberás realizar.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(13)" class="accordion-label" [class.active]="isOpen(13)">¿Cómo califican los examinadores el examen práctico?</button>
+          <div class="accordion-content" *ngIf="isOpen(13)">
+            <p>
+              A diferencia del examen teórico, donde se suman puntos por respuestas correctas, en el examen práctico se suman los errores cometidos, clasificados en leves, graves y reprobatorios, para determinar si el examen ha sido aprobado o no.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(14)" class="accordion-label" [class.active]="isOpen(14)">¿Con cuántos errores mi examen práctico estará reprobado?</button>
+          <div class="accordion-content" *ngIf="isOpen(14)">
+            <p>
+              El examen práctico se considera reprobado si cometemos: <br>
+              - 10 o más errores leves.<br>
+              - 5 errores leves y 1 o más graves.<br>
+              - 2 o más errores graves.<br>
+              - 1 error reprobatorio, lo que dará por finalizado el examen, incluso antes de completar el tiempo o el recorrido.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button (click)="toggleAccordion(15)" class="accordion-label" [class.active]="isOpen(15)">¿Quién recibirá el resultado de mi examen práctico?</button>
+          <div class="accordion-content" *ngIf="isOpen(15)">
+            <p>
+              Los examinadores reportarán los resultados de tu examen práctico al Ministerio de Transportes y Telecomunicaciones mediante una aplicación desarrollada por CONASET para transmitir esta información.
+            </p>
+          </div>
+        </div>
+      </div>      
+    </main>
+
+  </div>
+

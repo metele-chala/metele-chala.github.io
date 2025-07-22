@@ -1,0 +1,177 @@
+.pixel-slider-control {
+  color: black;
+  background-color: white;
+  margin: 10px;
+  font-family: "RetroGaming", system-ui;
+  border: 0;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+}
+
+.pixel-slider-control:hover {
+  background-color: rgba(198, 198, 198, 0.797);
+}
+
+.pixel-slider-control:active {
+  transform: translateY(5px);
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, inset 0px 5px #00000038;
+}
+
+
+/* Info Text */
+.info-text {
+  margin-top: 2%;
+  text-align: center;
+  padding: 1.4rem;
+  font-size: 1.0rem;
+  background-color: white;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+}
+
+
+
+/* Info Boxes Section */
+.info-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centra verticalmente */
+  align-items: center;
+  /* Centra horizontalmente */
+  text-align: center;
+  height: 100%;
+  /* Asegura que tome toda la altura */
+}
+
+.info-box h3 {
+  font-size: 1.5rem;
+}
+
+/* Slider Container */
+.slider {
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+  margin-top: 1%;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  
+}
+
+/* Slide Styles */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  flex: 1 0 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Controls */
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+
+
+/* Main section que se adapta al espacio entre las cajas */
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+.pixel-button-info-box {
+  text-decoration: none;
+  color: #fff;
+  background-color: #6abc3a;
+  padding: 15px 40px 15px 40px;
+  margin: 10px;
+  font-size: 14px;
+  font-family: "RetroGaming", system-ui;
+  border: 0;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+  cursor: pointer;
+}
+.pixel-button-info-box:hover {
+  background-color: #5da433;
+}
+.pixel-button-info-box:active {
+  transform: translateY(5px);
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, inset 0px 5px #00000038;
+}
+
+
+
+
+
+
+/* Diseño para móviles */
+@media (max-width: 768px) {
+
+  /* Ajustar la sección de texto informativo */
+  .info-text {
+    margin-top: 5%;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    background-color: white;
+  }
+
+  /* Ajustar las cajas de información en móviles */
+  .info-boxes {
+    display: flex;
+    flex-direction: column;
+    /* Cambiar la dirección a columna */
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  /* Ajustar el tamaño de las cajas de información */
+  .info-box {
+    width: 100%;
+    /* Que cada caja ocupe todo el ancho disponible */
+    text-align: center;
+    padding: 0rem;
+  }
+
+  .pixel-slider-control {
+    margin: 0px;
+    box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+    padding: 0.1rem 0.5rem;
+    font-size: 1rem;
+  }
+
+  /* Hacer el texto de las cajas de información más grande para móviles */
+  .info-box h3 {
+    font-size: 1.1rem;
+  }
+
+}

@@ -1,0 +1,278 @@
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: 8px; /* Espacio entre botones */
+  padding: 10px;
+  max-width: 100%; /* Se ajusta al ancho disponible */
+}
+
+.cuestionario {
+  user-select: none; /* Deshabilita la selección de texto */
+  -webkit-user-select: none; /* Para navegadores basados en WebKit */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para versiones antiguas de IE */
+}
+
+.empezar {
+  display: flex;
+  justify-content: center;
+}
+
+.enviar {
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-to-top {
+  display: flex;
+  justify-content: center;
+}
+
+.pixel-button {
+  color: #fff;
+  background-color: #6abc3a;
+  padding: 15px 40px 15px 40px;
+  margin: 10px;
+  font-size: 14px;
+  font-family: "RetroGaming", system-ui;
+  border: 0;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+  cursor: pointer;
+}
+.pixel-button:hover {
+  background-color: #5da433;
+}
+
+.pixel-button:disabled {
+  color: #aaa; /* Color de texto más tenue */
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+  background-color: #c5c5c5; /* Color de fondo deshabilitado */
+  cursor: not-allowed; /* Cursor que indica que está deshabilitado */
+  opacity: 0.7; /* Transparencia para dar un efecto visual */
+}
+
+.pixel-button:active {
+  transform: translateY(5px);
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, inset 0px 5px #00000038;
+}
+
+/* Sobrescribir el estado :active para los botones deshabilitados */
+.pixel-button:disabled:active {
+  transform: none; /* No aplicar la transformación */
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+}
+
+.pixel-navegador {
+  color: black;
+  background-color: white;
+  margin: 3px;
+  font-family: "RetroGaming", system-ui;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+  cursor: pointer;
+  border: none;
+  padding: 5px 5px;
+}
+.pixel-navegador:hover {
+  background-color: rgb(203, 203, 203);
+}
+.pixel-navegador:active {
+  transform: translateY(5px);
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, inset 0px 5px #00000038;
+}
+/* Contenedor de la pregunta y respuestas */
+.pregunta-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pregunta-box {
+  background-color: #f8f8f8;
+  padding: 20px;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black;
+  width: 80%;
+}
+
+/* Título de la pregunta */
+.pregunta-titulo {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "RetroGaming", system-ui;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+/* Respuestas */
+.pregunta-respuestas {
+  margin-top: 15px;
+}
+
+/* Contenedor de las respuestas */
+.respuesta {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Input en la primera columna, texto en la segunda */
+  gap: 10px; /* Espaciado entre input y texto */
+  margin-bottom: 10px; /* Espaciado entre opciones */
+  align-items: start; /* Alinea el input con el inicio del texto */
+}
+
+/* Estilo de los inputs (checkbox o radio) */
+.pixel-input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black;
+  cursor: pointer;
+}
+.pixel-input:hover {
+  background-color: rgb(203, 203, 203);
+}
+.pixel-input:disabled {
+  background-color: rgb(203, 203, 203);
+  cursor: not-allowed;
+}
+.pixel-input:checked {
+  background-color: #6abc3a;
+}
+
+/* Texto de las respuestas */
+.respuesta-texto {
+  font-family: "RetroGaming";
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.5; /* Aumentar interlineado para mayor legibilidad */
+}
+
+.pregunta-box.correcta {
+  background-color: #d4edda;
+  border: 1px solid #28a745;
+}
+
+.pregunta-box.incorrecta {
+  background-color: #f8d7da;
+  border: 1px solid #dc3545;
+}
+
+
+.pixel-navegador.correcta {
+  background-color: #d4edda;
+  border: 1px solid #28a745;
+}
+.pixel-navegador.correcta:hover {
+  background-color: #abbdaf;
+}
+
+.pixel-navegador.incorrecta {
+  background-color: #f8d7da;
+  border: 1px solid #dc3545;
+}
+.pixel-navegador.incorrecta:hover {
+  background-color: #dbc0c2;
+}
+
+
+.respuesta-correcta {
+  background-color: green;
+  color: white;
+  padding: 1%;
+}
+
+.respuesta-incorrecta {
+  background-color: red;
+  color: white;
+  padding: 1%;
+}
+
+.pixel-button-scroll {
+  position: fixed;
+  bottom: 15%;
+  right: 1%;
+  font-size: 20px;
+  z-index: 1000;
+  color: #fff;
+  background-color: #6abc3a;
+  padding: 10px 20px;
+  font-family: "RetroGaming", system-ui;
+  border: 0;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+  cursor: pointer;
+}
+
+.pixel-button-scroll:active {
+  transform: translateY(5px);
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, inset 0px 5px #00000038;
+}
+.pixel-button-scroll:hover {
+  background-color: #5da433;
+}
+
+.pregunta-explicacion {
+  background-color: #f8f8f8;
+  padding: 10px;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black;
+  text-align: center;
+  color: black;
+  font-size: 1rem;
+  font-family: "RetroGaming", system-ui;
+  display: block;
+}
+
+
+/* Info Text */
+.info-text {
+  margin: 1% 1%;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  background-color: white;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+}
+
+
+/* Info Text */
+.info-test {
+  width: 50%;
+  margin: 1% 1%;
+  padding: 0.5%;
+  text-align: center;
+  font-size: 1.1rem;
+  background-color: white;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+}
+
+
+.info-box {
+  background-color: white;
+  padding: 10px; /* Espaciado interno */
+  margin: 1% auto; /* Margen superior e inferior */
+  width: 80%; /* Ancho del rectángulo */
+  max-width: 400px; /* Ancho máximo */
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.temporizador {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  z-index: 1000;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+  font-family: "RetroGaming", system-ui;
+}
+
+/* Diseño para móviles */
+@media (max-width: 768px) {
+
+  .pixel-button-scroll {
+    bottom: 10%;
+    padding: 3px 12px;
+  }
+}

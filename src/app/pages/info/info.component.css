@@ -1,0 +1,97 @@
+/* Info Text */
+.info-text {
+  margin: 1% 1%;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  background-color: white;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black;
+}
+
+
+.accordion {
+  margin: 2% 1%;
+  border: 1px solid #ddd;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black;
+}
+
+.accordion-item {
+  width: 100%;
+  ;
+}
+
+
+/* Estilos adicionales para el acordeón para una mejor usabilidad */
+.accordion-label {
+  all: unset;
+  /* Elimina todos los estilos predeterminados */
+  background: transparent;
+  /* Elimina el fondo */
+  border: none;
+  /* Elimina el borde */
+  font: inherit;
+  /* Hereda la fuente del elemento padre */
+  width: 98%;
+  background-color: #97de6e;
+  padding: 1% 1%;
+  cursor: pointer;
+  /* Cambia el cursor para indicar que es clickeable */
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black;
+}
+
+.accordion-label.active {
+  background-color: #7bbb57;
+  /* Mantiene el color cuando está activo */
+}
+
+.accordion-label:hover {
+  background-color: #7bbb57;
+}
+
+.accordion-content {
+  padding: 1% 1%;
+  background-color: #f9f9f9;
+  /* Color de fondo para diferenciar el contenido */
+}
+
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.accordion-item input[type="checkbox"]:checked~.accordion-content {
+  max-height: none;
+  /* Expande el contenido cuando está abierto */
+  padding: 0px 20px;
+}
+
+.accordion-item input[type="checkbox"]:not(:checked)~.accordion-content {
+  max-height: 0;
+  /* Oculta el contenido si está cerrado */
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.page-container {
+  display: flex;
+}
+
+main {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+
+  /* Redefinir contenedor principal de anuncios */
+  .page-container {
+    flex-direction: column;
+    min-height: 100vh;
+    /* Asegura que la página tenga toda la altura */
+    display: flex;
+  }
+
+  app-footer {
+    margin-top: auto;
+    /* Empuja el footer hacia abajo */
+  }
+}

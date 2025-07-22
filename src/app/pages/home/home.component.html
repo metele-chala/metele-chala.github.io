@@ -1,0 +1,48 @@
+
+  <div class="ad-container">
+
+    <main>
+      <section class="slider" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+        <div class="slides" [style.transform]="transformStyle">
+          <div 
+            class="slide" 
+            *ngFor="let slide of slides; let i = index" 
+            [class.active]="i === currentSlide">
+            <img [src]="slide.imageUrl" alt="Slide Image">
+          </div>
+        </div>
+      
+        <!-- Mostrar controles solo si hay más de un slide -->
+        <div class="slider-controls" *ngIf="slides.length > 1">
+          <button class="pixel-slider-control" (click)="prevSlide()"><</button>
+          <button class="pixel-slider-control" (click)="nextSlide()">></button>
+        </div>
+      </section>
+
+      <section class="info-text">
+        <p>Bienvenid&#64;! ofrecemos tests gratuitos para que practiques tu examen teórico de conducir clase B.<br> 
+          Aprende con nosotros y prepárate para Meterle Chala!
+        </p>
+      </section>
+
+      <section class="info-boxes">
+        <a href="info?item=2" class="pixel-button-info-box">
+          <div class="info-box">
+            <h3>¿Dónde puedo encontrar el libro para la conducción en Chile para la licencia clase B?</h3>
+          </div>
+        </a>
+        <a href="info?item=3" class="pixel-button-info-box">
+          <div class="info-box">
+            <h3>Pasos para obtener la licencia de conducir clase B</h3>
+          </div>
+        </a>
+        <a href="info?item=1" class="pixel-button-info-box">
+          <div class="info-box">
+            <h3>Acerca de "MeteleChala.cl"</h3>
+          </div>
+        </a>
+      </section>
+    </main>
+  </div>
+
+

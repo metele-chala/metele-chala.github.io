@@ -1,0 +1,112 @@
+/* Estilos generales */
+.pixel-button {
+  color: #fff;
+  background-color: #6abc3a;
+  padding: 15px 40px;
+  margin: 10px;
+  font-size: 14px;
+  font-family: "RetroGaming", system-ui;
+  border: 0;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
+  cursor: pointer;
+}
+.pixel-button:hover {
+  background-color: #5da433;
+}
+
+.pixel-button:active {
+  transform: translateY(5px);
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, inset 0px 5px #00000038;
+}
+
+header {
+  display: flex;
+  flex-direction: row; /* Esto asegura que los elementos estén en una fila para pantallas grandes */
+  justify-content: space-between; /* Distribuye los elementos de forma equitativa */
+  align-items: center; /* Alinea verticalmente los elementos */
+  color: white;
+  padding: 1rem 2rem;
+  background-color: #333;
+}
+
+header .logo {
+  text-align: center; /* Centra el logo */
+}
+
+header nav {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espacio entre los íconos de redes sociales */
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* Estilos para pantallas móviles (máximo 768px de ancho) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* En pantallas pequeñas, los elementos se apilan verticalmente */
+    align-items: center; /* Centra todo en la pantalla */
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  header nav {
+    margin-top: 2%;
+    display: flex;
+    gap: 10px;
+    position: static; /* Elimina la posición absoluta */
+    justify-content: center; /* Centra los botones */
+    transform: none; /* Elimina la traslación */
+  }
+
+  .pixel-button {
+    padding: 2%;
+    margin: 1%;
+    font-size: 15px;
+  }
+
+  .social-links {
+    margin: 0px 0px;
+  }
+
+  /* Espaciado para los iconos sociales */
+  .social-links .instagram {
+    margin-right: 0px;
+  }
+
+  .social-links .tiktok {
+    margin-left: 0px;
+  }
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+}

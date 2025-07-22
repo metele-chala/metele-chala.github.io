@@ -1,0 +1,13 @@
+footer {
+  margin-top: auto; /* Esto empuja el pie de página hacia el fondo */
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      font-size: 0.7rem;
+    }
+  }

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://metelechala.cl/assets/sitemap.xml
