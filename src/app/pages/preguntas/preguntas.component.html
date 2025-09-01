@@ -1,64 +1,55 @@
+<section class="info-text">
+  <p>
+    En esta sección puedes responder preguntas basadas en el <strong>Libro del Nuevo Conductor</strong> de Chile, diseñadas para ayudarte a prepararte para el examen teórico y obtener la <strong>licencia de conducir clase B</strong>.
+    <br><br>
+    Las preguntas pueden ser de <strong>verdadero o falso</strong>, o con <strong>4 alternativas</strong>, de las cuales <strong>solo una es correcta</strong>.
+    Una vez que envíes tu respuesta, se mostrará la opción correcta junto con una explicación de la respuesta correcta.
+  </p>
+</section>
 
-    
-    <section class="info-text">
-      <p>En esta sección puedes realizar tests de conducir con un total de 35 preguntas y una duración de 45 minutos.
-        <br><br>
-        Para completar el test, es obligatorio responder todas las preguntas. Una vez finalizado, se proporciona un resumen detallado con tus resultados, además de una explicación de la respuesta correcta.
-        
-      </p>
-    </section>
 
 
-    <div class="empezar">
-      <button *ngIf="!testIniciado" class="pixel-button" (click)="iniciarTest()">Empezar test</button>
+
+<div class="empezar">
+  <button *ngIf="!testIniciado" class="pixel-button" (click)="iniciarTest()">Empezar a responder</button>
+</div>
+
+<!-- Sección del cuestionario -->
+<section class="cuestionario" *ngIf="testIniciado">
+  <form (ngSubmit)="enviarCuestionario()">
+    <div *ngFor="let pregunta of preguntas; let i = index" id="pregunta{{ i + 1 }}" class="pregunta-container">
+      <div class="pregunta-container">
+        <div class="pregunta-box"
+          [ngClass]="{'correcta': pregunta.esCorrecta, 'incorrecta': formularioEnviado && !pregunta.esCorrecta}">
+          <label class="pregunta-titulo">{{ pregunta.pregunta }}</label>
+
+          <div class="pregunta-respuestas">
+            <div *ngFor="let respuesta of pregunta.respuestas; let j = index" class="respuesta">
+              <!-- Radio para preguntas de una sola respuesta -->
+              <input type="radio" [value]="respuesta.respuesta" name="pregunta{{ i }}"
+                [id]="'pregunta' + i + '_respuesta' + j" class="custom-radio pixel-input"
+                (change)="guardarRespuesta(pregunta, respuesta, $event)" [disabled]="formularioEnviado" />
+
+              <label [for]="'pregunta' + i + '_respuesta' + j" class="respuesta-texto" [ngClass]="{'respuesta-correcta': respuesta.estadoColor === 'correcta', 
+                                              'respuesta-incorrecta': respuesta.estadoColor === 'incorrecta'}">
+                {{ respuesta.respuesta }} <span *ngIf="formularioEnviado">{{ respuesta.textoAdicional }}</span></label>
+
+            </div>
+            <p *ngIf="formularioEnviado" ng class="pregunta-explicacion"><b><u>Explicacion</u>:
+              </b>{{pregunta.explicacion}}</p>
+          </div>
+        </div>
+      </div>
+
     </div>
 
 
     <div class="enviar">
-      <button *ngIf="formularioEnviado" type="submit" class="pixel-button" (click)="reiniciarCuestionario()">Responder otro test</button>
+      <button *ngIf="!formularioEnviado" type="submit" class="pixel-button" [disabled]="!puedeEnviar">Confirmar</button>
+      <button *ngIf="formularioEnviado" type="submit" class="pixel-button" (click)="reiniciarCuestionario()">Responder
+        otra pregunta</button>
     </div>
 
-    <!-- Sección del cuestionario -->
-    <section class="cuestionario" *ngIf="testIniciado">
-        <form (ngSubmit)="enviarCuestionario()">
-          <div *ngFor="let pregunta of preguntas; let i = index" id="pregunta{{ i + 1 }}" 
-          class="pregunta-container" >
-            <div class="pregunta-container" >
-              <div class="pregunta-box" [ngClass]="{'correcta': pregunta.esCorrecta, 'incorrecta': formularioEnviado && !pregunta.esCorrecta}">
-                <label class="pregunta-titulo">{{ pregunta.pregunta }}</label>
-                
-                <div class="pregunta-respuestas">
-                  <div *ngFor="let respuesta of pregunta.respuestas; let j = index" class="respuesta">
-                    <!-- Radio para preguntas de una sola respuesta -->
-                    <input 
-                      type="radio" 
-                      [value]="respuesta.respuesta" 
-                      name="pregunta{{ i }}" 
-                      [id]="'pregunta' + i + '_respuesta' + j"
-                      class="custom-radio pixel-input"
-                      (change)="guardarRespuesta(pregunta, respuesta, $event)"
-                      [disabled]="formularioEnviado"
-                    />
-                      
-                    <label [for]="'pregunta' + i + '_respuesta' + j" class="respuesta-texto" [ngClass]="{'respuesta-correcta': respuesta.estadoColor === 'correcta', 
-                                              'respuesta-incorrecta': respuesta.estadoColor === 'incorrecta'}">
-    {{ respuesta.respuesta }} <span *ngIf="formularioEnviado">{{ respuesta.textoAdicional }}</span></label>
-                    
-                  </div>
-                  <p *ngIf="formularioEnviado" ng class="pregunta-explicacion"><b><u>Explicacion</u>: </b>{{pregunta.explicacion}}</p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-          
-          
-          <div class="enviar">
-            <button *ngIf="!formularioEnviado" type="submit" class="pixel-button" [disabled]="!puedeEnviar">Enviar</button>
-            <button *ngIf="formularioEnviado" type="submit" class="pixel-button" (click)="reiniciarCuestionario()">Responder otro test</button>
-          </div>
 
-
-        </form>
-    </section>
-    
+  </form>
+</section>

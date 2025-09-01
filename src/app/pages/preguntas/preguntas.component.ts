@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -19,8 +19,7 @@ export class PreguntasComponent implements OnInit {
   formularioEnviado: boolean = false;
   testIniciado: boolean = false;
   preguntasCorrectas: number = 0;
-  preguntasIncorrectas: number = 35;
-  private temporizador: any;
+  preguntasIncorrectas: number = 0; // ahora como es solo 1, parte en 0
   isVisible: boolean = false;
 
   constructor(private http: HttpClient) {}
@@ -32,37 +31,39 @@ export class PreguntasComponent implements OnInit {
   iniciarTest(): void {
     this.testIniciado = true;
     this.preguntasCorrectas = 0;
-    this.preguntasIncorrectas = 35;
+    this.preguntasIncorrectas = 0;
   }
 
   obtenerPreguntas(): void {
     this.http.get<{ preguntas: any[] }>('assets/files/preguntas.json')
       .subscribe((data) => {
-        this.preguntas = data.preguntas.map((p) => {
-          let respuestas: Respuesta[] = [];
-          let respuestasCorrectas: string[] = [];
+        // elegir una pregunta aleatoria
+        const randomIndex = Math.floor(Math.random() * data.preguntas.length);
+        const p = data.preguntas[randomIndex];
 
-          if (p.tipo === 'verdadero_falso') {
-            respuestas = [
-              { respuesta: 'Verdadero' },
-              { respuesta: 'Falso' }
-            ];
-            respuestasCorrectas = [p.respuesta_correcta ? 'Verdadero' : 'Falso'];
-          } else if (p.tipo === 'seleccion_multiple' && p.alternativas) {
-            respuestas = Object.entries(p.alternativas).map(([key, value]) => ({
-              respuesta: `${key}: ${value}`
-            }));
-            respuestasCorrectas = [p.respuesta_correcta];
-          }
+        let respuestas: Respuesta[] = [];
+        let respuestasCorrectas: string[] = [];
 
-          return {
-            pregunta: p.enunciado,
-            respuestas,
-            explicacion: p.explicacion,
-            respuestasCorrectas,
-            respuestasSeleccionadas: []
-          } as Pregunta;
-        });
+        if (p.tipo === 'verdadero_falso') {
+          respuestas = [
+            { respuesta: 'Verdadero' },
+            { respuesta: 'Falso' }
+          ];
+          respuestasCorrectas = [p.respuesta_correcta ? 'Verdadero' : 'Falso'];
+        } else if (p.tipo === 'seleccion_multiple' && p.alternativas) {
+          respuestas = Object.entries(p.alternativas).map(([key, value]) => ({
+            respuesta: `${key}: ${value}`
+          }));
+          respuestasCorrectas = [p.respuesta_correcta];
+        }
+
+        this.preguntas = [{
+          pregunta: p.enunciado,
+          respuestas,
+          explicacion: p.explicacion,
+          respuestasCorrectas,
+          respuestasSeleccionadas: []
+        } as Pregunta];
 
         this.actualizarEstadoEnvio();
       });
@@ -99,11 +100,12 @@ export class PreguntasComponent implements OnInit {
       pregunta.esCorrecta = respuestasCorrectas.has(seleccionada) || respuestasCorrectas.has(seleccionada?.charAt(0));
       if (pregunta.esCorrecta) {
         this.preguntasCorrectas++;
+      } else {
+        this.preguntasIncorrectas++;
       }
     });
 
     this.formularioEnviado = true;
-    this.preguntasIncorrectas = this.preguntasIncorrectas - this.preguntasCorrectas;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 

@@ -95,3 +95,16 @@ main {
     /* Empuja el footer hacia abajo */
   }
 }
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  padding: 0 1%; /* Mantiene el padding cuando está cerrado */
+  background-color: #f9f9f9;
+}
+
+.accordion-content.open {
+  max-height: 500px; /* Ajusta según el contenido más largo que tengas */
+  padding: 1% 1%;
+}
