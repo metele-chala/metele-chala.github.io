@@ -1,0 +1,104 @@
+{
+  "preguntas": [
+    {
+      "id": 1,
+      "tipo": "verdadero_falso",
+      "enunciado": "El cinturón de seguridad debe usarse siempre, incluso en trayectos cortos y a baja velocidad.",
+      "respuesta_correcta": true,
+      "explicacion": "El libro indica que la mayoría de los accidentes ocurren cerca del hogar y a bajas velocidades. El cinturón reduce significativamente el riesgo de muerte o lesiones."
+    },
+    {
+      "id": 2,
+      "tipo": "verdadero_falso",
+      "enunciado": "Un apoya-cabezas mal regulado puede ser más peligroso que no usarlo.",
+      "respuesta_correcta": true,
+      "explicacion": "El efecto “latigazo” es más fuerte cuando el apoya-cabezas está demasiado bajo, pudiendo provocar lesiones cervicales graves."
+    },
+    {
+      "id": 3,
+      "tipo": "verdadero_falso",
+      "enunciado": "Los frenos ABS reducen la distancia de frenado en cualquier tipo de superficie.",
+      "respuesta_correcta": false,
+      "explicacion": "El ABS evita el bloqueo de las ruedas y mantiene la dirección, pero en superficies como ripio o nieve puede incluso aumentar levemente la distancia de frenado."
+    },
+    {
+      "id": 4,
+      "tipo": "verdadero_falso",
+      "enunciado": "El sistema “Visión Cero” plantea que el error humano nunca debe generar consecuencias graves o mortales.",
+      "respuesta_correcta": true,
+      "explicacion": "Este enfoque de seguridad vial asume que los humanos cometerán errores, por lo que el sistema debe diseñarse para evitar muertes."
+    },
+    {
+      "id": 5,
+      "tipo": "verdadero_falso",
+      "enunciado": "El tiempo de reacción promedio de un conductor es de 0,3 segundos.",
+      "respuesta_correcta": false,
+      "explicacion": "El tiempo de reacción promedio es cercano a 1 segundo. Creer que es más bajo puede llevar a subestimar la distancia de seguridad necesaria."
+    },
+    {
+      "id": 6,
+      "tipo": "seleccion_multiple",
+      "enunciado": "¿Cuál es el principal objetivo del cinturón de seguridad?",
+      "alternativas": {
+        "A": "Evitar el efecto del alcohol en el cuerpo",
+        "B": "Reducir la velocidad del vehículo en un choque",
+        "C": "Retener al ocupante y evitar que se golpee contra el interior del vehículo",
+        "D": "Sustituir al airbag"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "El cinturón mantiene al ocupante en su asiento, disminuyendo la probabilidad de impacto contra elementos internos o de salir eyectado."
+    },
+    {
+      "id": 7,
+      "tipo": "seleccion_multiple",
+      "enunciado": "¿Qué debe hacer un conductor para evitar el “efecto latigazo”?",
+      "alternativas": {
+        "A": "Usar cinturón de seguridad y regular bien el apoya-cabezas",
+        "B": "Inclinar el asiento hacia atrás lo máximo posible",
+        "C": "Manejar solo en trayectos largos",
+        "D": "Apoyar la cabeza directamente contra la ventana"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La combinación de cinturón y apoya-cabezas regulado a la altura correcta protege la columna cervical."
+    },
+    {
+      "id": 8,
+      "tipo": "seleccion_multiple",
+      "enunciado": "¿Cuál de los siguientes factores aumenta más la distancia total de detención?",
+      "alternativas": {
+        "A": "Tiempo de reacción",
+        "B": "Uso de frenos ABS",
+        "C": "Circular con el cinturón de seguridad",
+        "D": "Encender luces bajas"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La distancia total de detención es la suma de la distancia de reacción y la de frenado. El tiempo de reacción influye de forma crítica."
+    },
+    {
+      "id": 9,
+      "tipo": "seleccion_multiple",
+      "enunciado": "Según el enfoque “Visión Cero”, ¿cuál es el elemento más importante a considerar en la seguridad vial?",
+      "alternativas": {
+        "A": "Que los conductores nunca cometan errores",
+        "B": "Que la infraestructura y vehículos estén diseñados para minimizar daños",
+        "C": "Que solo se conduzca de día",
+        "D": "Que los peatones siempre usen chaleco reflectante"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Visión Cero busca un sistema seguro que tolere el error humano y minimice las consecuencias."
+    },
+    {
+      "id": 10,
+      "tipo": "seleccion_multiple",
+      "enunciado": "¿Cuál es la principal causa de muerte en accidentes de tránsito en Chile?",
+      "alternativas": {
+        "A": "Exceso de velocidad",
+        "B": "Fallas mecánicas",
+        "C": "Conducir sin cinturón de seguridad",
+        "D": "Condiciones climáticas adversas"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El exceso de velocidad es uno de los factores de riesgo más graves, ya que incrementa tanto la probabilidad de accidente como la gravedad de las lesiones."
+    }
+  ]
+}

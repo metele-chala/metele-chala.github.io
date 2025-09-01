@@ -7,30 +7,15 @@
         
       </p>
     </section>
-    
-    <section *ngIf="formularioEnviado" class="info-box">
-      <p>Preguntas correctas: <b>{{ preguntasCorrectas }}</b></p>
-      <p>Preguntas incorrectas: <b>{{ preguntasIncorrectas }}</b></p>
-      <p>Tiempo restante: <b>{{ tiempo }}</b></p>
-    </section>
+
 
     <div class="empezar">
       <button *ngIf="!testIniciado" class="pixel-button" (click)="iniciarTest()">Empezar test</button>
     </div>
 
-    <!-- Botón flotante para el cronómetro -->
-    <button *ngIf="testIniciado && !formularioEnviado" class="temporizador">
-      {{ tiempo }}
-    </button>
 
     <div class="enviar">
       <button *ngIf="formularioEnviado" type="submit" class="pixel-button" (click)="reiniciarCuestionario()">Responder otro test</button>
-    </div>
-    <!-- Contenedor de navegación entre preguntas -->
-    <div class="navigation" *ngIf="testIniciado">
-      <button class="pixel-navegador" *ngFor="let pregunta of preguntas; let i = index" (click)="scrollToPregunta(i + 1)" [ngClass]="{'correcta': pregunta.esCorrecta, 'incorrecta': formularioEnviado && !pregunta.esCorrecta}">
-        {{ i + 1 }}
-      </button>
     </div>
 
     <!-- Sección del cuestionario -->
