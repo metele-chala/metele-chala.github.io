@@ -1,12 +1,3 @@
-.navigation {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Centra los botones horizontalmente */
-  gap: 8px; /* Espacio entre botones */
-  padding: 10px;
-  max-width: 100%; /* Se ajusta al ancho disponible */
-}
-
 .cuestionario {
   user-select: none; /* Deshabilita la selección de texto */
   -webkit-user-select: none; /* Para navegadores basados en WebKit */
@@ -20,14 +11,11 @@
 }
 
 .enviar {
+  margin-top: 0px;
   display: flex;
   justify-content: center;
 }
 
-.scroll-to-top {
-  display: flex;
-  justify-content: center;
-}
 
 .pixel-button {
   color: #fff;
@@ -63,28 +51,11 @@
   box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
 }
 
-.pixel-navegador {
-  color: black;
-  background-color: white;
-  margin: 3px;
-  font-family: "RetroGaming", system-ui;
-  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
-  cursor: pointer;
-  border: none;
-  padding: 5px 5px;
-}
-.pixel-navegador:hover {
-  background-color: rgb(203, 203, 203);
-}
-.pixel-navegador:active {
-  transform: translateY(5px);
-  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, inset 0px 5px #00000038;
-}
 /* Contenedor de la pregunta y respuestas */
 .pregunta-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 0.3%;
 }
 
 .pregunta-box {
@@ -157,23 +128,6 @@
 }
 
 
-.pixel-navegador.correcta {
-  background-color: #d4edda;
-  border: 1px solid #28a745;
-}
-.pixel-navegador.correcta:hover {
-  background-color: #abbdaf;
-}
-
-.pixel-navegador.incorrecta {
-  background-color: #f8d7da;
-  border: 1px solid #dc3545;
-}
-.pixel-navegador.incorrecta:hover {
-  background-color: #dbc0c2;
-}
-
-
 .respuesta-correcta {
   background-color: green;
   color: white;
@@ -186,28 +140,6 @@
   padding: 1%;
 }
 
-.pixel-button-scroll {
-  position: fixed;
-  bottom: 15%;
-  right: 1%;
-  font-size: 20px;
-  z-index: 1000;
-  color: #fff;
-  background-color: #6abc3a;
-  padding: 10px 20px;
-  font-family: "RetroGaming", system-ui;
-  border: 0;
-  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
-  cursor: pointer;
-}
-
-.pixel-button-scroll:active {
-  transform: translateY(5px);
-  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, inset 0px 5px #00000038;
-}
-.pixel-button-scroll:hover {
-  background-color: #5da433;
-}
 
 .pregunta-explicacion {
   background-color: #f8f8f8;
@@ -253,26 +185,4 @@
   box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
   text-align: center;
   font-size: 1.2rem;
-}
-
-.temporizador {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background-color: white;
-  border: none;
-  padding: 10px;
-  font-size: 16px;
-  z-index: 1000;
-  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black, 0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038, inset 0px 5px #ffffff36;
-  font-family: "RetroGaming", system-ui;
-}
-
-/* Diseño para móviles */
-@media (max-width: 768px) {
-
-  .pixel-button-scroll {
-    bottom: 10%;
-    padding: 3px 12px;
-  }
 }
